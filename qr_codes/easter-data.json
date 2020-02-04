@@ -1,0 +1,381 @@
+{
+    "templates": {
+        "small": {
+            "bg_url": "small_example.png",
+            "bg_w": 300,
+            "bg_h": 400,
+            "qr_x": 100,
+            "qr_y": 40,
+            "qr_size": 160,
+            "text_size": 12,
+            "text_color": "#ff00ff",
+            "text_font": "Inter Semi Bold",
+            "text_x": 25,
+            "text_y": 375
+        },
+        "medium": {
+            "bg_url": "medium_example.png",
+            "bg_w": 500,
+            "bg_h": 500,
+            "qr_x": 200,
+            "qr_y": 210,
+            "qr_size": 240,
+            "text_size": 16,
+            "text_color": "#ff00ff",
+            "text_font": "Inter Semi Bold",
+            "text_x": 25,
+            "text_y": 475
+        },
+        "large": {
+            "bg_url": "large_example.png",
+            "bg_w": 800,
+            "bg_h": 1200,
+            "qr_x": 250,
+            "qr_y": 330,
+            "qr_size": 320,
+            "text_size": 16,
+            "text_color": "#ff00ff",
+            "text_font": "Inter Semi Bold",
+            "text_x": 25,
+            "text_y": 1175
+        }
+    },
+    "eggs": [
+        {
+            "egg_id": "00",
+            "template": "medium",
+            "location": "Crossroad (start)",
+            "lat": 50.71255,
+            "long": -3.07578,
+            "three_words": "crows.entry.recliner"
+        },
+        {
+            "egg_id": "01",
+            "template": "large",
+            "location": "Crossroad (start 2)",
+            "lat": 50.71255,
+            "long": -3.07578,
+            "three_words": "crows.entry.recliner"
+        },
+        {
+            "egg_id": "02",
+            "template": "small",
+            "location": "Crossroad (start 3)",
+            "lat": 50.71255,
+            "long": -3.07578,
+            "three_words": "crows.entry.recliner"
+        },
+        {
+            "egg_id": "03",
+            "template": "medium",
+            "location": "Crossroad (car park)",
+            "lat": 50.71259,
+            "long": -3.07586,
+            "three_words": "iteration.cackling.renders"
+        },
+        {
+            "egg_id": "04",
+            "template": "small",
+            "location": "Homer Lane lamp post",
+            "lat": 50.71271,
+            "long": -3.07579,
+            "three_words": "strictest.relate.forehead"
+        },
+        {
+            "egg_id": "05",
+            "template": "medium",
+            "location": "Harepath Road triangle lamp post",
+            "lat": 50.71319,
+            "long": -3.07465,
+            "three_words": "chapels.imparting.unopposed"
+        },
+        {
+            "egg_id": "06",
+            "template": "large",
+            "location": "Harepath Road lamp post opp Lydgates",
+            "lat": 50.71216,
+            "long": -3.07422,
+            "three_words": "nightlife.convinces.crust"
+        },
+        {
+            "egg_id": "07",
+            "template": "medium",
+            "location": "Harepath Road lamp post opp Eyewell",
+            "lat": 50.71075,
+            "long": -3.07374,
+            "three_words": "losing.scraper.scoots"
+        },
+        {
+            "egg_id": "08",
+            "template": "large",
+            "location": "Harepath Road lamp post before Court Lane",
+            "lat": 50.70947,
+            "long": -3.07341,
+            "three_words": "wanted.ridge.poses"
+        },
+        {
+            "egg_id": "09",
+            "template": "medium",
+            "location": "Meadow Road - John's garden",
+            "lat": 50.70884,
+            "long": -3.07189,
+            "three_words": "numeral.require.outs"
+        },
+        {
+            "egg_id": "10",
+            "template": "small",
+            "location": "Meadow Road - Robert's garden",
+            "lat": 50.70870,
+            "long": -3.07201,
+            "three_words": "archduke.feelers.situates"
+        },
+        {
+            "egg_id": "11",
+            "template": "small",
+            "location": "Meadow Road - lamp post by Roger's",
+            "lat": 50.70847,
+            "long": -3.07191,
+            "three_words": "afraid.chess.prestige"
+        },
+        {
+            "egg_id": "12",
+            "template": "medium",
+            "location": "Manor Road - Graham's garden",
+            "lat": 50.70716,
+            "long": -3.07172,
+            "three_words": "valued.decisions.oppose"
+        },
+        {
+            "egg_id": "13",
+            "template": "large",
+            "location": "Number One notice board",
+            "lat": 50.70716,
+            "long": -3.07252,
+            "three_words": "corner.hawks.spreading"
+        },
+        {
+            "egg_id": "14",
+            "template": "medium",
+            "location": "PartService window",
+            "lat": 50.70647,
+            "long": -3.07249,
+            "three_words": "liquid.acquaint.husky"
+        },
+        {
+            "egg_id": "15",
+            "template": "small",
+            "location": "Bevis and Beckingsale window",
+            "lat": 50.70633,
+            "long": -3.07240,
+            "three_words": "forever.describe.hazy"
+        },
+        {
+            "egg_id": "16",
+            "template": "medium",
+            "location": "Imagine Design Create window",
+            "lat": 50.70565,
+            "long": -3.07198,
+            "three_words": "jogging.utter.lamps"
+        },
+        {
+            "egg_id": "17",
+            "template": "medium",
+            "location": "Natural Worx window",
+            "lat": 50.70518,
+            "long": -3.07167,
+            "three_words": "tribe.ballooned.respond"
+        },
+        {
+            "egg_id": "18",
+            "template": "medium",
+            "location": "Seaton Library window",
+            "lat": 50.70517,
+            "long": -3.07173,
+            "three_words": "deliver.minds.redeemed"
+        },
+        {
+            "egg_id": "19",
+            "template": "small",
+            "location": "Animal Botanical window",
+            "lat": 50.70496,
+            "long": -3.07164,
+            "three_words": "smiled.downsize.unlisted"
+        },
+        {
+            "egg_id": "20",
+            "template": "medium",
+            "location": "Lloyds Bank window",
+            "lat": 50.70447,
+            "long": -3.07098,
+            "three_words": "motivator.diet.reactions"
+        },
+        {
+            "egg_id": "21",
+            "template": "medium",
+            "location": "Coastal Crafts window",
+            "lat": 50.70440,
+            "long": -3.07093,
+            "three_words": "tidal.singles.cheater"
+        },
+        {
+            "egg_id": "22",
+            "template": "small",
+            "location": "Paul's Bakery window",
+            "lat": 50.70433,
+            "long": -3.07092,
+            "three_words": "sprint.savings.bookshop"
+        },
+        {
+            "egg_id": "23",
+            "template": "medium",
+            "location": "League of Friends shop window",
+            "lat": 50.70464,
+            "long": -3.07075,
+            "three_words": "guises.monorail.swept"
+        },
+        {
+            "egg_id": "24",
+            "template": "large",
+            "location": "Four Seasons window",
+            "lat": 50.70465,
+            "long": -3.06969,
+            "three_words": "crunching.important.grazed"
+        },
+        {
+            "egg_id": "25",
+            "template": "small",
+            "location": "Underfleet lamp post by Seaton Jurassic",
+            "lat": 50.70568,
+            "long": -3.06814,
+            "three_words": "suiting.owls.heeding"
+        },
+        {
+            "egg_id": "26",
+            "template": "small",
+            "location": "Underfleet lamp post opp new car park entrance",
+            "lat": 50.70652,
+            "long": -3.06777,
+            "three_words": "pumps.maternal.headrest"
+        },
+        {
+            "egg_id": "27",
+            "template": "medium",
+            "location": "Underfleet lamp post by play park",
+            "lat": 50.70717,
+            "long": -3.06822,
+            "three_words": "eggs.rainwater.cafe"
+        },
+        {
+            "egg_id": "28",
+            "template": "small",
+            "location": "Underfleet lamp post after Fleet Court entrance",
+            "lat": 50.70738,
+            "long": -3.06935,
+            "three_words": "fully.demanding.influencing"
+        },
+        {
+            "egg_id": "29",
+            "template": "large",
+            "location": "Colyford Road lamp post after Fortfield entrance",
+            "lat": 50.70838,
+            "long": -3.06986,
+            "three_words": "depths.engrossed.spout"
+        },
+        {
+            "egg_id": "30",
+            "template": "small",
+            "location": "Colyford Road lamp post opp King's Arms",
+            "lat": 50.70873,
+            "long": -3.06976,
+            "three_words": "typified.endings.bravo"
+        },
+        {
+            "egg_id": "31",
+            "template": "medium",
+            "location": "Colyford Road lamp post by Court Lane",
+            "lat": 50.70939,
+            "long": -3.06944,
+            "three_words": "soulful.keener.hiker"
+        },
+        {
+            "egg_id": "32",
+            "template": "large",
+            "location": "St Gregory's Hall notice board",
+            "lat": 50.70979,
+            "long": -3.06894,
+            "three_words": "diver.nail.thousands"
+        },
+        {
+            "egg_id": "33",
+            "template": "medium",
+            "location": "Colyford Road wood post opp Garrett Close",
+            "lat": 50.71075,
+            "long": -3.06865,
+            "three_words": "jump.storms.doghouse"
+        },
+        {
+            "egg_id": "34",
+            "template": "small",
+            "location": "Colyford Road - Jeff's Garden",
+            "lat": 50.71147,
+            "long": -3.06852,
+            "three_words": "livid.areas.eliminate"
+        },
+        {
+            "egg_id": "35",
+            "template": "large",
+            "location": "Colyford Road lamp post opp Hillymead",
+            "lat": 50.71158,
+            "long": -3.06854,
+            "three_words": "foresight.blazed.livid"
+        },
+        {
+            "egg_id": "36",
+            "template": "large",
+            "location": "Seaton Methodist fence by gate",
+            "lat": 50.71178,
+            "long": -3.07035,
+            "three_words": "mile.concerts.cookie"
+        },
+        {
+            "egg_id": "37",
+            "template": "small",
+            "location": "Seaton Methodist fence by final roadside tree",
+            "lat": 50.71170,
+            "long": -3.07088,
+            "three_words": "crinkled.sunblock.enigma"
+        },
+        {
+            "egg_id": "38",
+            "template": "medium",
+            "location": "Valley View lamp post start of hospital lay-by",
+            "lat": 50.71171,
+            "long": -3.07215,
+            "three_words": "costs.perplexed.mysteries"
+        },
+        {
+            "egg_id": "39",
+            "template": "small",
+            "location": "Valley View - lamp post by bench",
+            "lat": 50.71215,
+            "long": -3.07292,
+            "three_words": "embraced.tester.ruffling"
+        },
+        {
+            "egg_id": "40",
+            "template": "medium",
+            "location": "Valley View - fire station fence",
+            "lat": 50.71241,
+            "long": -3.07354,
+            "three_words": "type.overdone.automate"
+        },
+        {
+            "egg_id": "41",
+            "template": "small",
+            "location": "Crossroad - finish line (kept by Jesse)",
+            "lat": 50.71255,
+            "long": -3.07578,
+            "three_words": "crows.entry.recliner"
+        }
+    ]
+}
