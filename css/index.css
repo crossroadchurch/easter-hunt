@@ -1,7 +1,16 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
 
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+body {
+    font-family: Nunito, sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    @apply max-w-xl;
+}
