@@ -47,7 +47,7 @@
             "location": "Crossroad (start)",
             "lat": 50.71255,
             "long": -3.07578,
-            "three_words": "crows.entry.recliner"
+            "three_words": "enrolling.toggle.state"
         },
         {
             "egg_id": "01",
@@ -55,7 +55,7 @@
             "location": "Crossroad (start 2)",
             "lat": 50.71255,
             "long": -3.07578,
-            "three_words": "crows.entry.recliner"
+            "three_words": "mixing.leader.games"
         },
         {
             "egg_id": "02",
@@ -375,7 +375,7 @@
             "location": "Crossroad - finish line (kept by Jesse)",
             "lat": 50.71255,
             "long": -3.07578,
-            "three_words": "crows.entry.recliner"
+            "three_words": "concluded.outbid.reception"
         }
     ]
 }
