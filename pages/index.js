@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default () => (
   <div className="min-h-screen bg-red-400 text-white">
     <main className="container mx-auto p-4 py-12 text-center">
@@ -6,9 +8,11 @@ export default () => (
         Follow the trail and discover digital eggs on the way. There are a
         possible 46 eggs to find into total. Best of luck!
       </p>
-      <a className="block bg-white text-gray-800 py-2 rounded-full border-2 border-gray-800 text-lg font-bold shadow-lg">
-        Get Started
-      </a>
+      <Link href="/play">
+        <a className="block bg-white text-gray-800 py-2 rounded-full border-2 border-gray-800 text-lg font-bold shadow-lg">
+          Get Started
+        </a>
+      </Link>
     </main>
   </div>
 )
