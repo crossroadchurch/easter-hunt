@@ -23,3 +23,9 @@ body {
 .container {
     @apply max-w-xl;
 }
+
+.bg {
+    background-image: url(/bg.png);
+    background-size: cover;
+    background-repeat: repeat;
+}
