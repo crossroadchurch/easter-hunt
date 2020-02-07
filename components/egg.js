@@ -110,18 +110,37 @@ function get_egg_svg(three_words) {
   return egg_svg
 }
 
-const Egg = ({ threeWords, className }) => (
-  <div
-    className={`${className} w-10`}
-    dangerouslySetInnerHTML={{ __html: get_egg_svg(threeWords) }}
-  ></div>
-)
+const Egg = ({ id, className, size = '10' }) => {
+  const found = eggs.filter(({ egg_id }) => {
+    return egg_id === id
+  })
+
+  if (found.length > 0) {
+    const [{ three_words }] = found
+
+    return (
+      <div
+        className={`${className} w-${size}`}
+        dangerouslySetInnerHTML={{ __html: get_egg_svg(three_words) }}
+      ></div>
+    )
+  } else {
+    return (
+      <div className={`w-${size}`}>
+        <svg viewBox="0 0 750 1000">
+          <path
+            d="M 748.22738,617.27582 C 741.56542,739.09258 698.47008,870.65596 592.21291,940.93445 473.82988,1018.0025 313.27239,1017.289 189.727,952.56061 81.582452,896.47785 20.533549,778.14644 6.8101586,660.50444 -23.438768,447.93424 47.345632,215.92541 213.86979,75.307502 268.55076,31.399454 338.94205,-15.626627 412.23386,5.0056437 523.43044,41.3255 606.7546,133.82793 664.25447,232.45839 c 66.17223,115.96725 93.25951,252.07892 83.97291,384.81743 z"
+            fill="#e8e8e8"
+          />
+        </svg>
+      </div>
+    )
+  }
+}
 
 export const RandomEgg = () => {
   let egg_idx = Math.floor(Math.random() * eggs.length)
-  let three_words = get_egg_svg(eggs[egg_idx]['three_words'])
-
-  return <Egg threeWords={three_words} />
+  return <Egg id={egg_idx.padStart(2, '0')} />
 }
 
 export default Egg
