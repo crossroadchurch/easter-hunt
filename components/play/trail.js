@@ -10,7 +10,7 @@ export default ({ eggs }) => (
       Trail
     </h2>
     <section>
-      {eggs.map((egg) => {
+      {eggs.filter(egg => egg.is_trail_node == true).map((egg) => {
         return (
           <div key={egg.egg_id}>
             <Location {...egg} />
