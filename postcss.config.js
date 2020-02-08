@@ -9,6 +9,7 @@ module.exports = {
               './pages/**/*.{js,jsx,ts,tsx}',
               './components/**/*.{js,jsx,ts,tsx}',
             ],
+            whitelistPatterns: [/\w-/],
             defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
           },
         ]
