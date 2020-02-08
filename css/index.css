@@ -29,3 +29,7 @@ body {
     background-size: cover;
     background-repeat: repeat;
 }
+
+.nav-item {
+    @apply w-full whitespace-no-wrap inline-flex items-center px-4 py-2 font-medium rounded-full;
+}

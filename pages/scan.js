@@ -28,10 +28,10 @@ export default () => {
     <Page title="Scan an Egg">
       <main className="min-h-screen bg-black p-4">
         <div className="container mx-auto">
-          <nav class="my-8">
+          <nav className="my-8">
             <button
               onClick={() => Router.back()}
-              className="bg-white px-4 py-1 rounded-full inline-flex items-center"
+              className="bg-white shadow px-4 py-1 rounded-full inline-flex items-center"
             >
               <span>&larr; Back to the Trail</span>
             </button>
