@@ -99,14 +99,13 @@ function get_egg_svg(three_words) {
     p_count = (p_count + 1) % (palette.length - 1)
   }
   let egg_svg =
-    "<svg viewbox='0 0 750 1000'><path d='" +
+    "<path d='" +
     egg_path +
     "' fill='" +
     palette[0] +
     "' />" +
     top_svg +
-    bottom_svg +
-    '</svg>'
+    bottom_svg
   return egg_svg
 }
 
@@ -121,8 +120,11 @@ const Egg = ({ id, className, size = '10' }) => {
     return (
       <div
         className={`${className} w-${size}`}
-        dangerouslySetInnerHTML={{ __html: get_egg_svg(three_words) }}
-      ></div>
+      >
+        <svg viewBox="0 0 750 1000"
+          dangerouslySetInnerHTML={{ __html: get_egg_svg(three_words) }}
+        ></svg>
+      </div>
     )
   } else {
     return (
@@ -138,9 +140,34 @@ const Egg = ({ id, className, size = '10' }) => {
   }
 }
 
+export const RawEgg = ({ id, tx, ty }) => {
+  const found = eggs.filter(({ egg_id }) => {
+    return egg_id === id
+  })
+  if (found.length > 0) {
+    const [{ three_words }] = found
+
+    return (
+      <g transform={`translate(${tx} ${ty})`}
+        dangerouslySetInnerHTML = {{ __html: get_egg_svg(three_words) }}
+      >
+      </g>
+    )
+  } else {
+    return (
+        <g transform={translate}>
+          <path
+            d="M 748.22738,617.27582 C 741.56542,739.09258 698.47008,870.65596 592.21291,940.93445 473.82988,1018.0025 313.27239,1017.289 189.727,952.56061 81.582452,896.47785 20.533549,778.14644 6.8101586,660.50444 -23.438768,447.93424 47.345632,215.92541 213.86979,75.307502 268.55076,31.399454 338.94205,-15.626627 412.23386,5.0056437 523.43044,41.3255 606.7546,133.82793 664.25447,232.45839 c 66.17223,115.96725 93.25951,252.07892 83.97291,384.81743 z"
+            fill="#e8e8e8"
+          />
+        </g>
+    )
+  }
+}
+
 export const RandomEgg = () => {
   let egg_idx = Math.floor(Math.random() * eggs.length)
-  return <Egg id={egg_idx.padStart(2, '0')} />
+  return <Egg id={egg_idx.toString().padStart(2, '0')} />
 }
 
 export default Egg
