@@ -1,7 +1,6 @@
 import Location from './location'
 import Spacer from './spacer'
 import { segments } from '../../qr_codes/easter-data'
-import { route } from 'next/dist/next-server/server/router'
 
 export default ({ eggs }) => {
   let trailEggs = []
@@ -13,7 +12,7 @@ export default ({ eggs }) => {
       ...found
     })
   }
-  
+
   return (
     <main className="container mx-auto p-4">
       <h2 className="text-xl tracking-wide text-gray-700 mb-4">Trail</h2>

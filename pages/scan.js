@@ -1,10 +1,13 @@
 import dynamic from 'next/dynamic'
 import Router from 'next/router'
 import Page from '../components/page'
+import { useLocalStorage } from 'react-use'
 
 const QrReader = dynamic(() => import('react-qr-reader'), { ssr: false })
 
 export default () => {
+  const [basket, setBasket] = useLocalStorage('basket', [])
+
   function handleError(error) {
     console.error(error)
   }
@@ -15,7 +18,7 @@ export default () => {
         const url = new URL(data)
         if (url.host === 'www.crossroad.org.uk') {
           const eggId = url.searchParams.get('egg')
-          // @todo add egg to basket and check it's not already there
+          setBasket((basket) => [...basket, eggId])
           Router.push(`/congrats?egg=${eggId}`)
         }
       } catch (e) {

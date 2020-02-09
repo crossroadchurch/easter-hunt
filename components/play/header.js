@@ -2,15 +2,14 @@ import { Map, Camera, Clipboard, Menu } from 'react-feather'
 import Basket from '../../components/basket'
 import Link from 'next/link'
 import { useState } from 'react'
-
-const foundEggs = Array(42)
-  .fill(null)
-  .map((_, index) => {
-    return { egg_id: index.toString().padStart(2, '0') }
-  })
+import { useLocalStorage } from 'react-use'
 
 export default () => {
   const [open, setOpen] = useState(false)
+  const [basket, setBasket] = useLocalStorage('basket', [])
+  const found = basket.map((egg_id) => ({
+    egg_id
+  }))
 
   return (
     <>
@@ -52,7 +51,7 @@ export default () => {
       <div className="bg-gray-200">
         <div className="container mx-auto p-4">
           <div className="my-8">
-            <Basket className="max-w-sm mx-auto" found_eggs={foundEggs} />
+            <Basket className="max-w-sm mx-auto" found_eggs={found} />
           </div>
         </div>
       </div>
