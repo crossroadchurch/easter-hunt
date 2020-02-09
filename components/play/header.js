@@ -33,7 +33,7 @@ export default () => {
           </Link>
         </div>
         <div className={`${open ? 'block' : 'hidden'} border-t-2`}>
-          <nav className="container mx-auto py-4 pt-4 nav flex flex-col items-center justify-between">
+          <nav className="container mx-auto p-4 nav flex flex-col items-center justify-between">
             <Link href="/map">
               <a className="nav-item mb-4 bg-yellow-300">
                 <Map size="20" />
