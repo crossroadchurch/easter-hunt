@@ -13,6 +13,7 @@ export default ({ eggs }) => {
       ...found
     })
   }
+  
   return (
     <main className="container mx-auto p-4">
       <h2 className="text-xl tracking-wide text-gray-700 mb-4">Trail</h2>

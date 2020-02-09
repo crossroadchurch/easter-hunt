@@ -12,6 +12,7 @@ export default () => {
     } else {
       setFound([])
     }
+    console.log(found)
   }
 
   return (
