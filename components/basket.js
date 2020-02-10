@@ -1,5 +1,5 @@
 import { RawEgg } from '../components/egg'
-import { basket_positions } from '../qr_codes/easter-data'
+import { basket_positions, basket_levels } from '../qr_codes/easter-data'
 
 let rim_path =
   'm 179.22745,4333.0769 c 2026.66705,148.021 4063.80475,155.6966 6090.28215,0 241.0988,5.0508 240.2085,442.2732 0,455.1355 C 4351.0662,4963.3212 2418.3011,4974.6858 498.41682,4814.2909 328.87955,4781.4596 56.622424,4851.5636 5.0203479,4626.4542 -15.79485,4504.313 25.437394,4329.0274 179.22745,4333.0769 Z'
@@ -11,10 +11,13 @@ export default ({ found_eggs, className }) => {
   for (let i = found_eggs.length - 1; i >= 0; i--) {
     basket_eggs.push({ ...found_eggs[i], ...basket_positions[i] })
   }
+  const levels = basket_levels.filter(
+    (level) => level.max_eggs >= found_eggs.length
+  )
 
   return (
     <div className={`${className || ''}`}>
-      <svg viewBox="0 0 6450 6450">
+      <svg viewBox={levels[0].view_box}>
         {basket_eggs.map((egg, index) => {
           return <RawEgg key={index} id={egg.egg_id} tx={egg.tx} ty={egg.ty} />
         })}
