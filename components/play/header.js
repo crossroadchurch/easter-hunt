@@ -13,7 +13,7 @@ export default () => {
 
   return (
     <>
-      <div className="bg-white sticky top-0 shadow-sm">
+      <div className="bg-white sticky top-0 shadow">
         <div className="container p-4 mx-auto flex items-center justify-between">
           <h1 className="text-gray-800 text-lg">
             <button
