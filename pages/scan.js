@@ -18,8 +18,10 @@ export default () => {
         const url = new URL(data)
         if (url.host === 'www.crossroad.org.uk') {
           const eggId = url.searchParams.get('egg')
-          setBasket((basket) => [...basket, eggId])
-          Router.push(`/congrats?egg=${eggId}`)
+          if (basket.includes(eggId) == false) {
+            setBasket((basket) => [...basket, eggId])
+            Router.push(`/congrats?egg=${eggId}`)
+          }
         }
       } catch (e) {
         console.error('Oh no you didnt.')
