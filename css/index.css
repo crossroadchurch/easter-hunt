@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .container {
@@ -32,4 +32,10 @@ body {
 
 .nav-item {
     @apply w-full whitespace-no-wrap inline-flex items-center px-4 py-2 font-medium rounded-full;
+}
+
+.bg-egg {
+    background-image: url(/egg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }

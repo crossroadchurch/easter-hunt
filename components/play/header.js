@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { useLocalStorage } from 'react-use'
 
 export default () => {
+  const [team] = useLocalStorage('team')
+  const teamName = team && team.name
   const [open, setOpen] = useState(false)
   const [basket, setBasket] = useLocalStorage('basket', [])
   const found = basket.map((egg_id) => ({
@@ -50,6 +52,18 @@ export default () => {
       </div>
       <div className="bg-gray-200">
         <div className="container mx-auto p-4">
+          <ul className="text-sm">
+            <li>
+              <span className="bg-blue-600 font-medium text-white px-1 rounded">
+                Team: {teamName}
+              </span>
+            </li>
+            <li>
+              <span className="bg-blue-600 font-medium text-white px-1 rounded">
+                Total Eggs: {found.length}
+              </span>
+            </li>
+          </ul>
           <div className="my-8">
             <Basket className="max-w-sm mx-auto" found_eggs={found} />
           </div>
