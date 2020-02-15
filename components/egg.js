@@ -164,9 +164,9 @@ export const RawEgg = ({ id, tx, ty }) => {
   }
 }
 
-export const RandomEgg = () => {
+export const RandomEgg = ({ size }) => {
   let egg_idx = Math.floor(Math.random() * eggs.length)
-  return <Egg id={egg_idx.toString().padStart(2, '0')} />
+  return <Egg size={size} id={egg_idx.toString().padStart(2, '0')} />
 }
 
 export default Egg
