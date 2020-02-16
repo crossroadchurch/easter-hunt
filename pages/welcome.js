@@ -1,23 +1,58 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLocalStorage } from 'react-use'
-import uuid from 'uuid/v4'
 import { useRouter } from 'next/router'
+import { X } from 'react-feather'
+import uuid from 'uuid/v4'
 
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import { useCollectionOnce } from 'react-firebase-hooks/firestore'
+
+import initFirebase from '../lib/firebase'
 import Page from '../components/page'
 import Egg from '../components/egg'
+
+initFirebase()
 
 export default () => {
   const router = useRouter()
   const [teamName, setTeamName] = useState('')
   const [team, setTeam] = useLocalStorage('team')
+  const [error, setError] = useState(null)
+
+  const [snapshot] = useCollectionOnce(firebase.firestore().collection('teams'))
+
+  useEffect(() => {
+    if (snapshot) {
+      snapshot.forEach((document) => {
+        if (teamName === document.data().name) {
+          setError('Whoops! That team name already taken. Please try again.')
+        }
+      })
+    }
+  }, [snapshot, teamName])
 
   function createTeam() {
     const id = uuid()
-    setTeam({
-      name: teamName,
-      id
-    })
-    router.push('/play')
+
+    if (!error) {
+      const teamData = {
+        name: teamName,
+        id
+      }
+
+      // Write to database
+      firebase
+        .firestore()
+        .collection('teams')
+        .doc(id)
+        .set(teamData)
+        .then(() => {
+          // Write to localstorage
+          setTeam(teamData)
+          router.push('/play')
+        })
+    }
   }
 
   return (
@@ -31,6 +66,18 @@ export default () => {
       </header>
       <main className="max-w-xl mx-auto p-4">
         <form>
+          {error ? (
+            <div className="w-full bg-orange-500 text-white p-2 rounded mb-4 inline-flex items-center justify-between">
+              {error}
+              <button
+                onClick={() => {
+                  setError(null)
+                }}
+              >
+                <X />
+              </button>
+            </div>
+          ) : null}
           <label>
             <span className="hidden">Team Name</span>
             <input

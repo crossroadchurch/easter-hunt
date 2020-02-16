@@ -1,12 +1,44 @@
+import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Router from 'next/router'
 import Page from '../components/page'
 import { useLocalStorage } from 'react-use'
 
+import initFirebase from '../lib/firebase'
+initFirebase()
+
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+const db = firebase.firestore()
+
 const QrReader = dynamic(() => import('react-qr-reader'), { ssr: false })
 
 export default () => {
+  const [egg, setEgg] = useState(null)
   const [basket, setBasket] = useLocalStorage('basket', [])
+  const [team] = useLocalStorage('team')
+
+  useEffect(() => {
+    // Right now, there is no way to simply append to
+    // an array in a firestore document, so for now we will
+    // just rewrite all eggs in localstorage to the document when we find
+    // an new egg
+    if (!egg) {
+      return
+    }
+
+    const newBasket = [...basket, egg]
+    db.collection('teams')
+      .doc(team.id)
+      .set({ eggs: newBasket })
+      .then(() => {
+        setBasket(newBasket)
+        Router.push(`/congrats?egg=${egg.id}`)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [egg])
 
   function handleError(error) {
     console.error(error)
@@ -18,13 +50,16 @@ export default () => {
         const url = new URL(data)
         if (url.host === 'www.crossroad.org.uk') {
           const eggId = url.searchParams.get('egg')
-          if (basket.includes(eggId) == false) {
-            setBasket((basket) => [...basket, eggId])
-            Router.push(`/congrats?egg=${eggId}`)
+          const foundEggIds = basket.map(({ id }) => id)
+          if (foundEggIds.includes(eggId) == false) {
+            setEgg({
+              id: eggId,
+              found: new Date()
+            })
           }
         }
       } catch (e) {
-        console.error('Oh no you didnt.')
+        console.log(e)
       }
     }
   }

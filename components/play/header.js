@@ -9,9 +9,11 @@ export default () => {
   const teamName = team && team.name
   const [open, setOpen] = useState(false)
   const [basket, setBasket] = useLocalStorage('basket', [])
-  const found = basket.map((egg_id) => ({
-    egg_id
-  }))
+  const found = basket
+    .map(({ id }) => ({
+      egg_id: id
+    }))
+    .filter((egg) => egg)
 
   return (
     <>
