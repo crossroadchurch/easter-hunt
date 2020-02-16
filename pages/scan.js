@@ -54,7 +54,7 @@ export default () => {
           if (foundEggIds.includes(eggId) == false) {
             setEgg({
               id: eggId,
-              found: new Date()
+              found: (new Date()).toString()
             })
           }
         }
