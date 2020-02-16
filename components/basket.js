@@ -17,7 +17,7 @@ export default ({ found_eggs, className, teamName }) => {
 
   return (
     <div>
-      <h2 className="text-center text-3xl text-purple-700 font-bold mb-4">
+      <h2 className="text-center text-3xl text-gray-700 font-bold mb-4">
         {teamName}
       </h2>
       <div className={`${className || ''} relative text-center`}>

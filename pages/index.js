@@ -2,7 +2,6 @@ import Page from '../components/page'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from 'react-use'
 
-
 export default () => {
   const router = useRouter()
   const [team] = useLocalStorage('team')
@@ -17,10 +16,12 @@ export default () => {
 
   return (
     <Page>
-      <div className="bg-yellow-300">
+      <div className="bg">
         <main className="max-w-sm mx-auto p-4 pt-12">
           <div className="min-h-screen bg-egg text-center pt-32 px-8">
-            <h1 className="text-4xl font-bold mb-2">The Egg Trail</h1>
+            <h1 className="text-4xl font-bold mb-2 whitespace-no-wrap">
+              The Egg Trail
+            </h1>
             <p className="mb-4">
               Follow the trail and discover digital eggs along the way!
             </p>
