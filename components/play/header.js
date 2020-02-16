@@ -54,7 +54,7 @@ export default () => {
       </div>
       <div className="bg-gray-200">
         <div className="container mx-auto p-4">
-          <div className="my-8">
+          <div className="my-4">
             <Basket
               className="max-w-sm mx-auto"
               teamName={teamName}

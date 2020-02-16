@@ -16,17 +16,26 @@ export default ({ found_eggs, className, teamName }) => {
   )
 
   return (
-    <div className={`${className || ''} relative text-center`}>
-      <span className="text-lg font-bold">{teamName}</span>
-      <svg viewBox={levels[0].view_box}>
-        {basket_eggs.map((egg, index) => {
-          return <RawEgg key={index} id={egg.egg_id} tx={egg.tx} ty={egg.ty} />
-        })}
-        <path d={basket_path} fill="#c87137" />
-        <path d={rim_path} fill="#a05a2c" />
-      </svg>
-      <div className="absolute bottom-0 inset-x-0 mb-2 text-center text-white font-semibold text-4xl">
-        {found_eggs.length >= 0 ? found_eggs.length : ''}
+    <div>
+      <h2 className="text-center text-3xl text-purple-700 font-bold mb-4">
+        {teamName}
+      </h2>
+      <div className={`${className || ''} relative text-center`}>
+        <svg viewBox={levels[0].view_box}>
+          {basket_eggs.map((egg, index) => {
+            return (
+              <RawEgg key={index} id={egg.egg_id} tx={egg.tx} ty={egg.ty} />
+            )
+          })}
+          <path d={basket_path} fill="#c87137" />
+          <path d={rim_path} fill="#a05a2c" />
+        </svg>
+        <div
+          style={{ marginBottom: '3%' }}
+          className="absolute bottom-0 inset-x-0 text-center text-white font-semibold text-4xl"
+        >
+          {found_eggs.length > 0 ? found_eggs.length : ''}
+        </div>
       </div>
     </div>
   )
