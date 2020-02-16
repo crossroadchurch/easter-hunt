@@ -2,6 +2,7 @@ import Page from '../components/page'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from 'react-use'
 
+
 export default () => {
   const router = useRouter()
   const [team] = useLocalStorage('team')
