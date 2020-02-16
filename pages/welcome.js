@@ -13,6 +13,7 @@ import Page from '../components/page'
 import Egg from '../components/egg'
 
 initFirebase()
+const db = firebase.firestore()
 
 export default () => {
   const router = useRouter()
@@ -42,9 +43,7 @@ export default () => {
       }
 
       // Write to database
-      firebase
-        .firestore()
-        .collection('teams')
+      db.collection('teams')
         .doc(id)
         .set(teamData)
         .then(() => {

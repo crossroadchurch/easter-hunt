@@ -30,7 +30,7 @@ export default () => {
     const newBasket = [...basket, egg]
     db.collection('teams')
       .doc(team.id)
-      .set({ eggs: newBasket })
+      .set({ eggs: newBasket }, { merge: true })
       .then(() => {
         setBasket(newBasket)
         Router.push(`/congrats?egg=${egg.id}`)
