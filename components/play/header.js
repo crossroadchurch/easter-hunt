@@ -15,7 +15,7 @@ export default () => {
 
   return (
     <>
-      <div className="bg-white sticky top-0 shadow">
+      <div className="bg-white sticky z-50 top-0 shadow">
         <div className="container p-4 mx-auto flex items-center justify-between">
           <h1 className="text-gray-800 text-lg">
             <button
@@ -52,20 +52,12 @@ export default () => {
       </div>
       <div className="bg-gray-200">
         <div className="container mx-auto p-4">
-          <ul className="text-sm">
-            <li>
-              <span className="bg-blue-600 font-medium text-white px-1 rounded">
-                Team: {teamName}
-              </span>
-            </li>
-            <li>
-              <span className="bg-blue-600 font-medium text-white px-1 rounded">
-                Total Eggs: {found.length}
-              </span>
-            </li>
-          </ul>
           <div className="my-8">
-            <Basket className="max-w-sm mx-auto" found_eggs={found} />
+            <Basket
+              className="max-w-sm mx-auto"
+              teamName={teamName}
+              found_eggs={found}
+            />
           </div>
         </div>
       </div>

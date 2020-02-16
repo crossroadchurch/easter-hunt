@@ -6,7 +6,7 @@ let rim_path =
 let basket_path =
   'm 6273.0526,4765.8038 c -23.2517,450.2429 -358.8926,801.0758 -683.2039,1078.7267 -442.9388,394.2123 -1038.1184,552.5124 -1618.3243,583.5695 -613.3743,24.6587 -1232.0022,44.6824 -1842.345,-34.3379 -529.9429,-65.0566 -1034.67,-299.5318 -1417.19377,-673.4469 -281.2955,-271.0035 -570.19137,-620.9397 -535.64361,-1036.3412 35.91379,-304.3069 409.3483,-177.825 608.00357,-150.1839 442.02571,70.9335 892.07421,46.5272 1337.60941,77.2338 831.6815,38.3647 1666.123,44.6914 2495.3827,-40.0403 457.2658,-47.0352 916.9316,-65.4687 1374.4085,-106.3642 160.9139,-60.1902 349.9766,-36.5559 282.4501,182.2321 -0.6512,39.6475 -1.1566,79.2987 -1.1437,118.9523 z'
 
-export default ({ found_eggs, className }) => {
+export default ({ found_eggs, className, teamName }) => {
   let basket_eggs = []
   for (let i = found_eggs.length - 1; i >= 0; i--) {
     basket_eggs.push({ ...found_eggs[i], ...basket_positions[i] })
@@ -16,7 +16,8 @@ export default ({ found_eggs, className }) => {
   )
 
   return (
-    <div className={`${className || ''}`}>
+    <div className={`${className || ''} relative text-center`}>
+      <span className="text-lg font-bold">{teamName}</span>
       <svg viewBox={levels[0].view_box}>
         {basket_eggs.map((egg, index) => {
           return <RawEgg key={index} id={egg.egg_id} tx={egg.tx} ty={egg.ty} />
@@ -24,6 +25,9 @@ export default ({ found_eggs, className }) => {
         <path d={basket_path} fill="#c87137" />
         <path d={rim_path} fill="#a05a2c" />
       </svg>
+      <div className="absolute bottom-0 inset-x-0 mb-2 text-center text-white font-semibold text-4xl">
+        {found_eggs.length >= 0 ? found_eggs.length : ''}
+      </div>
     </div>
   )
 }
