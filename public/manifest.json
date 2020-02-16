@@ -1,0 +1,16 @@
+{
+  "name": "Egg Trail",
+  "short_name": "Egg Trail",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#b2f5ea",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
