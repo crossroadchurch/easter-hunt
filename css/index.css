@@ -1,7 +1,6 @@
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
 
 @import url('https://rsms.me/inter/inter.css');
@@ -39,3 +38,10 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+input {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+/* purgecss end ignore */
