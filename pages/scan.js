@@ -86,6 +86,12 @@ export default () => {
             />
           </section>
         </div>
+        <input
+          type="file"
+          accept="image/*"
+          capture="camera"
+          className="hidden"
+        />
       </main>
     </Page>
   )
