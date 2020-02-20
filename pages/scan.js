@@ -17,6 +17,7 @@ export default () => {
   const [egg, setEgg] = useState(null)
   const [basket, setBasket] = useLocalStorage('basket', [])
   const [team] = useLocalStorage('team')
+  const moment = require('moment')
 
   useEffect(() => {
     // Right now, there is no way to simply append to
@@ -54,7 +55,7 @@ export default () => {
           if (foundEggIds.includes(eggId) == false) {
             setEgg({
               id: eggId,
-              found: new Date()
+              found: moment().format('YYYY-MM-DD HH:mm:ss')
             })
           }
         }
