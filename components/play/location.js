@@ -7,7 +7,7 @@ export default ({ description, egg_id }) => {
   return (
     <div className="flex items-center">
       <div className="flex-shrink-0 mr-4">
-        {basket.includes(egg_id) ? (
+        {basket.filter((egg) => egg.id === egg_id).length > 0 ? (
           <Egg id={egg_id} />
         ) : (
           <div className="w-10">
